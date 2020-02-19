@@ -20,19 +20,24 @@ function App() {
   });
 
   if (loading) return null;
-  if (error) return `Error! ${error}`;
 
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
         <h3>My app !</h3>
-        <p>Posts:</p>
-        <div>
-          {data.users.map(e => (
-            <li key={e.id}>{e.name}</li>
-          ))}
-        </div>
+        {!!error ? (
+          <div className="App-error">{`Error! ${error}`}</div>
+        ) : (
+          <>
+            <p>Posts:</p>
+            <div>
+              {data.users.map(e => (
+                <li key={e.id}>{e.name}</li>
+              ))}
+            </div>
+          </>
+        )}
       </header>
     </div>
   );
