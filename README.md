@@ -54,3 +54,8 @@ we also extend this docker-compose with [docker-compose.local.yml](MyProj-Backen
 4 deployements: 1 dev 1 prod for backend and frontend
 
 we use gitlab-runner setuped as shell executor, being more flexible and easier to setup for swarm and other environements
+
+# [bonnes_pratiques_dev_prod.pdf](bonnes_pratiques_dev_prod.pdf)
+
+Présentation donné par a PoC par @Geographer Lucas Santoni [Blog](blog.geographer.fr)
+
