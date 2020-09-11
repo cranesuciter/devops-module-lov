@@ -17,7 +17,7 @@ function App() {
         })
     }, 1000);
     return () => clearInterval(interval);
-  }, [])
+  }, [api_host])
 
   if (!data) return <h1>Loading...</h1>;
 
