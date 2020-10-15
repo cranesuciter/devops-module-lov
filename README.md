@@ -14,7 +14,7 @@ Local Run => `docker-compose -f docker-compose.yml -f docker-compose.local.yml u
 
 Node Project that setup a Express REST API</br>
 We can create new cats and query them with this api</br>
-[database.ts](MyProj-Backend/src/database.ts) Is where the mongo connection and schemas are declared
+[database.ts](MyProj-Backend/src/database/database.ts) Is where the mongo connection and schemas are declared, and the **environement variables are used**.
 
 ## Continuous deployment and integration
 
