@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  backend:
+    build: MyProj-Backend/
+    image: lov/nodeback
+    volumes:
+      - "./MyProj-Backend:/usr/app"  
+    ports:
+      - "8080:8080"
+    links:
+      - mongo
+    environment:
+      WAIT_HOSTS: db:27017
+      MONGO_USERNAME: api
+      MONGO_PASSWORD: docker1234
+      MONGO_HOST: mongo
+
+  mongo:
+    image: mongo:4.0
+    volumes:
+      - "./mongo/data:/data/db"
+    ports: 
+      - "27017:27017"
+    environment: 
+      MONGO_INITDB_ROOT_USERNAME: api
+      MONGO_INITDB_ROOT_PASSWORD: docker1234
+  
+  frontend:
+    build: MyProj-Frontend/
+    image: lov/nodefront
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/code
+    environment:
+      FLASK_ENV: development
